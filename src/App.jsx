@@ -13,11 +13,12 @@ import Error from './ui/Error';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-
+    errorElement: <Error />,
     children: [
       {
         path: '/',
         element: <Home />,
+        errorElement: <Error />,
       },
       {
         path: '/menu',
@@ -28,11 +29,13 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+        errorElement: <Error />,
       },
       {
         path: '/order/new',
         element: <CreateOrder />,
         action: createOrderAction,
+        errorElement: <Error />,
       },
       {
         path: '/order/:orderId',
